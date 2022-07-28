@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<div class="page-title-area pt-130 pb-120 " style="background-image: url(assets/img/bg/chechout-page-bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-titel-detalis  ">
+                    <div class="page-title position-relative">
+                        <h2>Register Page</h2>
+                    </div>
+                    <div class="page-bc">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"> <i
+                                            class="fas fa-home "></i>Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a
+                                        href="#">Register Page</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================Page Title Area End================= -->
+<!-- =================Login Area Starts================= -->
+
+<div class="login-page-area pt-50" style="margin-bottom: 50px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-9">
+                <form method="post" #regForm="ngForm" (ngSubmit)="onSubmit(regForm.value)">
+                    <div class="login-detalis pt-40 pr-40 pl-40 pb-40">
+                        <div class="login-input">
+                            <input type="text" ngModel placeholder="Enter your name." name="name">
+                            <input type="email" [(ngModel)]="email" placeholder="Enter your email...." name="email">
+                            <input type="password" ngModel placeholder="Enter your Password" name="password">
+                            <input type="text" ngModel placeholder="Enter your address" name="address">
+                            <input type="text" ngModel placeholder="Enter your phone" name="phone">
+                        </div>                 
+                        <div class="login-button text-center pt-30">
+                            <button [disabled]="!email" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                        <div class="login-information pt-25">
+                            <div class="remember-me">
+                                <input type="checkbox" id="checkbox-1"><label for="checkbox-1">Remember Me</label>
+                                <span class="float-right">Forgot <span>password?</span></span>
+                            </div>
+                        </div>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================Login Area Ends================= -->
+
+<app-footer></app-footer>

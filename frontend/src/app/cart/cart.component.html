@@ -1,0 +1,119 @@
+<app-header></app-header>
+
+<div class="page-title-area pt-130 pb-120 " style="background-image: url(assets/img/bg/contact-bg.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-titel-detalis  ">
+                    <div class="page-title position-relative">
+                        <h2>Cart Page</h2>
+                    </div>
+                    <div class="page-bc">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a> <i
+                                            class="fas fa-home "></i>Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a
+                                        href="#">Cart Page</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- =================Page Title Area Ends================= -->
+
+<!-- =================Page Title Area Starts================= -->
+<div class="product-area product-detalis-page cart-page-area  pt-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Unit Price</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="cartData.products.length">
+                            <tr *ngFor="let post of cartData.products">
+                                <td>{{post.productId}}</td>
+                                <td>{{post.name}}</td>
+                                <td>{{'image'}}</td>
+                                <td><input class="qty" (change)="onUpdateCart(post.productId,post.quantity)" type="number" min="1" [(ngModel)]="post.quantity" /> </td>
+                                <td><span>{{post.price}}</span></td>
+                                <td><span>{{post.price * post.quantity}}</span></td>
+                                <td>
+                                    <form method="post" #cartForm="ngForm" (ngSubmit)="onRemoveItem(cartForm.value)">
+                                        <input type="hidden" [(ngModel)]="cartData.user" name="user"/>
+                                        <input type="hidden" [(ngModel)]="post.productId" name="productId"/>
+                                        <button type="submit" class="btn btn-danger">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>                            
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="table-button text-left">
+                                        <button [routerLink]="['/checkout']" type="button" class="btn btn-success">CHECKOUT</button>
+                                        <button (click)="onDeleteCart()" type="button" class="btn btn-danger" style="float: right;">DELETE CART</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="product-cart pt-35">
+            <div class="row justify-content-center justify-content-lg-start">
+                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-9 col-12">
+                    
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-9 col-12">
+                    <div class="cart-wrapper pl-20 pt-30 pr-20 pb-30 mt-50 mb-50 mt-lg-0 mb-lg-0">
+                        <div class="section-title">
+                            <h6>
+                                Discount Code
+                            </h6>
+                        </div>
+                        <div class="country pt-15 pb-20">
+                            <span class="pb-10">Enter your coupon code if you have one.</span>
+                            <input type="text" >
+                        </div>
+                        <div class="table-button d-flex justify-content-end ">
+                            <a href="#" class="b-btn  pt-15 pb-15 pr-30 pl-30 ">APPLY</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-9 col-12">
+                    <div class="cart-wrapper pl-20 pt-30 pr-20 pb-50">
+                        <div class="cart-price-area text-right">
+                            <p>Subtotal <span class="d-inline-block">$ {{cartTotal}}</span></p>
+                            <p>Grand Total  <span class="d-inline-block">$ {{cartTotal}}</span></p>
+                        </div>
+
+                        <div class="table-button d-flex justify-content-end pt-20">
+                            <a href="#" class="b-btn  pt-20 pb-20 pr-50 pl-50 ">PROCED TO CHECKOUT</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

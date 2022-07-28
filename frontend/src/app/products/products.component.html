@@ -1,0 +1,141 @@
+<app-header></app-header>
+
+<div class="page-title-area pt-130 pb-120" style="background-image: url(assets/img/bg/contact-bg.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-titel-detalis  ">
+                    <div class="page-title position-relative">
+                        <h2>Shop Page</h2>
+                    </div>
+                    <div class="page-bc">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"> <i
+                                            class="fas fa-home "></i>Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a
+                                        href="#">Shope Page</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================Page Title Area Ends================= -->
+
+<!-- =================Product Area Starts================= -->
+
+<div class="product-area  product-shop-page pt-50 ">
+    <div class="container">
+        <div class="row">
+         <div class="col-xl-12 pb-50">
+            <div class="toolbar-navi d-inline-block ">
+                <div class="toolbar d-flex">
+                    <div class="view-as d-flex mr-30">
+                        <span>View as:</span>
+                        <div class="view-as-button ml-10">
+                            <a href="#"><i class="fab fa-microsoft"></i></a>
+                            <a href="#"><i class="fas fa-list-ul"></i></a>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="sort-by d-flex mr-30">
+                        <span class="mr-10">Sort by:</span>
+                        <div class="sort-by-option position-relative">
+                            <button id="sort-option" class="sort-option">Most Recent <i class="fas fa-caret-down"></i></button>
+
+                            <div id="sub-sort-option" class="sub-sort-option  position-absolute " >
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="show-option d-flex">
+                        <span class="mr-10">Show:</span>
+                        <div class="show-option-list position-relative">
+                            <button id="show-option-numbe" class="show-option-number">11 <i class="fas fa-caret-down"></i></button>
+                            <div id="sub-show-option" class="sub-show-option">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="construction-pagination float-right" aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+         </div>
+
+        </div>
+        
+        <div class="row" *ngIf="productData.length">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let post of productData">
+                <div class="product-wrapper mb-30">
+                    <div class="product-img ">
+                        <img src="{{post.image}}" alt="product" height="150px">
+                    </div>
+                    <div class="flip-box">
+                        <div class="product-detalis pt-15 pl-20 pr-20 pb-25">
+                            <span>{{post.category.name}}</span>
+                            <h6><a [routerLink]="['/singleproduct',post._id]">{{post.name}}</a></h6>
+                            <div class="price-color ">
+                                <div class="price d-inline-block">
+                                    <span>${{post.price}}</span>
+                                    <del>$999</del>
+                                </div>
+                                <div class="color float-right d-flex">
+                                    <span>Color:</span>
+                                    <div class="color-set">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-detalis product-detalis-2 pt-15 pl-20 pr-20 pb-25">
+                            <span>{{post.category.name}}</span>
+                            <h6><a [routerLink]="['/singleproduct',post._id]">{{post.name}}</a></h6>
+                            <div class="buy-info ">
+                                <div class="cart float-left">
+                                    <form method="post" #cartForm="ngForm" (ngSubmit)="addToCart(cartForm.value)">
+                                        <input type="hidden" [(ngModel)]="post._id" name="productId"/>
+                                        <input type="hidden" [(ngModel)]="post.name" name="name"/>
+                                        <input type="hidden" [(ngModel)]="post.price" name="price"/>                                            
+                                        <button type="submit" class="btn btn-success">Add To Cart</button> 
+                                     </form>
+                                </div>
+                                <ul class="rating d-flex">
+                                    <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<app-footer></app-footer>

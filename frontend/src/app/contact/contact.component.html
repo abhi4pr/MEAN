@@ -1,0 +1,105 @@
+<app-header></app-header>
+
+<div class="page-title-area pt-130 pb-120" style="background-image: url(assets/img/bg/contact-bg.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-titel-detalis  ">
+                    <div class="page-title position-relative">
+                        <h2>Contact Page</h2>
+                    </div>
+                    <div class="page-bc">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"> <i
+                                            class="fas fa-home "></i>Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a
+                                        href="#">Contact Page</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================Page Title Area Ends================= -->
+
+<!-- =================Map Area Starts================= -->
+
+<div class="map-area pt-50 ">
+    <div class="container">
+        <div id="map-container-googl" class="map-container ">
+            <iframe
+                src="https://maps.google.com/maps?q=manhatan&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                style="border:0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</div>
+<!-- =================Map Area Ends================= -->
+
+<!-- =================Comment  Area Starts================= -->
+
+<div class="contact-page comment-area pt-50" style="margin-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-md-8 col-sm-7 col-12">
+                <div class="comment-sidebar">
+                    <div class="section-title d-inline-block">
+                        <h3>
+                            Leave Reply
+                        </h3>
+                    </div>
+                    <div class="post-comment pt-25 ">
+                        <form method="post" #coForm="ngForm" (ngSubmit)="onSubmit(coForm.value)">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <ul class="name">
+                                        <li><label for="name">Nick name:</label></li>
+                                        <li><input type="text" id="name"></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <ul class="email pt-15 pt-sm-0">
+                                        <li><label for="email">Email Address :</label></li>
+                                        <li><input type="email" [(ngModel)]="email" name="email"></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xl-12">
+                                    <ul class="text-area pt-10">
+                                        <li><label for="text-area">Write a message :</label></li>
+                                        <li>
+                                            <textarea name="purpose" ngModel id="text-area" cols="30" rows="10"></textarea>
+                                        </li>
+                                    </ul>
+                                    <div class="submit pt-30">
+                                        <button [disabled]="!email" type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-12">
+                <div class="contact-info">
+                    <div class="section-title d-inline-block text-uppercase">
+                        <h3>
+                            Contact info
+                        </h3>
+                    </div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.</p>
+                    <ul class="contact pt-15">
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Dambo dika,USA,road123</span></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i><span>dotsee@one.com</span></li>
+                        <li><i class="fas fa-phone-alt" aria-hidden="true"></i><span>(+11) 987654321</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================Comment  Area Ends================= -->
+<app-footer></app-footer>

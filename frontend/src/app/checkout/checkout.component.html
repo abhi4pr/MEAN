@@ -1,0 +1,99 @@
+<app-header></app-header>
+
+<div class="page-title-area pt-130 pb-120 " style="background-image: url(assets/img/bg/contact-bg.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-titel-detalis  ">
+                    <div class="page-title position-relative">
+                        <h2>Checkout Page</h2>
+                    </div>
+                    <div class="page-bc">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a> <i
+                                            class="fas fa-home "></i>Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a
+                                        href="#">Checkout Page</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- =================Page Title Area Ends================= -->
+
+<!-- =================Page Title Area Starts================= -->
+
+    <div class="container">
+        <div class="row" style="margin-top: 50px;">
+          
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+              <div class="login-page-area pt-50" style="margin-top: -50px;">
+                <form method="post" #checkForm="ngForm" (ngSubmit)="onSubmit(checkForm.value)">
+                  <div class="login-detalis pt-40 pr-40 pl-40 pb-40">
+                      <div class="login-input">
+                          <input type="text" ngModel placeholder="Enter your shipping addres" name="shippingAddress">
+                          <input type="text" ngModel placeholder="Enter your city" name="city">
+                          <input type="number" [(ngModel)]="zip" placeholder="Enter your zip code" name="zip">
+                          <input type="text" ngModel placeholder="Enter your country" name="country">
+                          <input type="number" [(ngModel)]="phone" placeholder="Enter your phone number" name="phone">
+                      </div>                 
+                      <div class="login-button text-center pt-30">
+                          <button [disabled]="!zip || !phone" type="submit" class="btn btn-success">Place Order</button>
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4">
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="cartData.products.length">
+                            <tr *ngFor="let post of cartData.products">
+                                <td>{{post.name}}</td>
+                                <td>{{'image'}}</td>
+                                <td>{{post.quantity}} </td>
+                                <td><span>{{post.price}}</span></td>
+                                <td><span>{{post.price * post.quantity}}</span></td>
+                            </tr>                            
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="table-button text-left">
+                                        <button type="button" class="btn btn-success">TOTAL:-</button>
+                                        <button type="button" class="btn btn-danger" style="float: right;">$ {{cartTotal}}</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="product-cart pt-35">
+            <div class="row justify-content-center justify-content-lg-start">
+                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-9 col-12">
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+
+
+
+<app-footer></app-footer>

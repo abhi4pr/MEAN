@@ -1,0 +1,96 @@
+<header>
+    <div class="header-area header-2 header-5 header-8 pb-5  pl-65 pr-65 pt-30">
+        <div class="header-top">
+            <div class="container-fluid">
+                <div class="header-top">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+                            <div class="logo d-none pb-15 mt-15">
+                                <h5><a href="#">Moly </a></h5>
+                            </div>
+                            <ul class="user-info d-flex ">
+                                <li><a href="#">My Account</a></li>
+                                
+                                <li><a [routerLink]="['/cart']">Shopping Cart</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-6 col-sm-8 col-12">
+                            <div class="discount-mess text-left">
+                                <span> <img src="assets/img/icon/parcent.png" alt=""> Discount off 25% only for <span>Winter Collection !</span> </span>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-12" *ngIf="value.userID">
+                            <div class="header-top-right d-flex justify-content-end">
+                                <ul class="language">
+                                    <li><a href="#"><img src="assets/img/icon/flag.png" alt="flag">Hi! User</a>
+                                        <ul class="sub-language">
+                                            <li><a [routerLink]="['/profile']"> <img src="assets/img/icon/china.png" alt=""> Profile</a></li>     
+                                            <li><a [routerLink]="['/myorders']"><img src="assets/img/icon/china.png" alt=""> My orders</a></li>
+                                            <li><a [routerLink]="['/logout']"><img src="assets/img/icon/china.png" alt=""> Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-20">
+                <div class="header-menu bg-transparent pt-25">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-12 offset-xl-0 offset-lg-0 offset-md-5 offset-sm-4 ">
+                            <div class="logo ">
+                                <a [routerLink]="['/']"><img src="assets/img/logo/logo.png" alt="moly-logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 d-none d-lg-block">
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a [routerLink]="['/']">Home</a></li>
+                                        <li><a href="#">Categories</a>
+                                            <ul class="sub-menu">
+                                                <li *ngFor="let post of categoryData" value="{{post._id}}">
+                                                    <a [routerLink]="['/category',post._id]">{{post.name}}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a [routerLink]="['/products']">Shop</a></li>
+                                        <li><a [routerLink]="['/contact']">Contact Us</a></li>
+                                        <li *ngIf="!value.userID"><a [routerLink]="['/login']">Login</a></li>
+                                        <li *ngIf="!value.userID"><a [routerLink]="['/register']">Register</a></li>
+                                        <li>
+                                            <form #form class="navbar-form" role="search" method="GET" action="/search">
+                                                <div class="input-group">
+                                                    <input type="text" name="name" placeholder="Search Products Here.....">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-default" (click)="form.submit()" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-5 col-sm-5 col-12">
+                            <div class="site-info  d-flex justify-content-end">
+                                <div class="search mt-10 position-relative  ">
+                                    
+                                </div>
+                                
+                                <div class="cart pt-10 position-relative mr-10">
+                                    <a [routerLink]="['/cart']"><img src="assets/img/icon/bag.png" alt=""></a>
+                                    <div class="badge">{{cartCountData.items}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="mobile-menu"></div>
+            </div>
+        </div>
+
+    </div>
+</header>

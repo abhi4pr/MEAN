@@ -1,0 +1,131 @@
+<app-aheader></app-aheader>
+
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Core</div>
+                <a class="nav-link" [routerLink]="['/admin/dashboard']">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Dashboard
+                </a>
+                <a class="nav-link" [routerLink]="['/admin/aorders']">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  Orders
+                </a>
+                <a class="nav-link" [routerLink]="['/admin/ausers']">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  Users
+                </a>
+                <div class="sb-sidenav-menu-heading">Interface</div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsecategory" aria-expanded="false" aria-controls="collapsecategory">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Categories
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapsecategory" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" [routerLink]="['/admin/addcategory']">Add New</a>
+                        <a class="nav-link" [routerLink]="['/admin/categories']">List</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseproducts" aria-expanded="false" aria-controls="collapseproducts">
+                  <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                  Products
+                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseproducts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                  <nav class="sb-sidenav-menu-nested nav">
+                      <a class="nav-link" [routerLink]="['/admin/addproduct']">Add New</a>
+                      <a class="nav-link" [routerLink]="['/admin/aproducts']">List</a>
+                  </nav>
+                </div>
+                                                    
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>
+            Start Bootstrap
+        </div>
+    </nav>
+  </div>
+  
+  <div id="layoutSidenav_content">
+      <main>
+          <div class="container-fluid px-4">
+              <h1 class="mt-4">Categories</h1>
+              <ol class="breadcrumb mb-4">
+                  <li class="breadcrumb-item active">Categories</li>
+              </ol>
+              <div class="row">
+                  
+              </div>
+
+              <div class="card mb-4">
+                  <div class="card-header">
+                      <i class="fas fa-table me-1"></i>
+                      Category List
+                  </div>
+                  <div class="card-body">
+                    <div *ngIf="showLoader" class="mt-5 text-center">
+                      <img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif"/>
+                    </div>
+                    
+                    <table class="table table-bordered" *ngIf="!showLoader">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Icon</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody *ngIf="categoryData.length">
+                            <tr *ngFor="let post of categoryData">
+
+                              <div class="modal fade" id="myModal-{{post._id}}" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p style="text-align:center;">Are you sure to delete ?</p>
+                                      <input type="hidden" value={{post._id}} />
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button (click)="deleteCategory(post._id)" type="button" class="btn btn-success yess" data-dismiss="modal">Yes</button>
+                                      <button type="button" class="btn btn-danger noo" data-dismiss="modal">No</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                                <td>{{ post._id }}</td>
+                                <td>{{ post.name }}</td>
+                                <td>{{ post.icon }}</td>
+                                <td><a [routerLink]="['/admin/editcategory/',post._id]">Edit</a></td>
+                                <td><a href="#myModal-{{post._id}}" data-toggle="modal" style="cursor:pointer; color:blue;">Delete</a></td>
+                            </tr>
+                        </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </main>
+      <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid px-4">
+              <div class="d-flex align-items-center justify-content-between small">
+                  <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                  <div>
+                      <a href="#">Privacy Policy</a>
+                      &middot;
+                      <a href="#">Terms &amp; Conditions</a>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+</div>

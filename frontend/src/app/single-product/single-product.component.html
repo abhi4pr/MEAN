@@ -1,0 +1,269 @@
+<app-header></app-header>
+
+<div class="page-title-area pt-130 pb-120 " style="background-image: url(assets/img/bg/contact-bg.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-titel-detalis  ">
+                    <div class="page-title position-relative">
+                        <h2>Shop Page</h2>
+                    </div>
+                    <div class="page-bc">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"> <i
+                                            class="fas fa-home "></i>Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a
+                                        href="#">Shope Page</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================Page Title Area Starts================= -->
+
+<!-- =================Product Area Starts================= -->
+
+<div class="product-area product-shop-page  product-list-page product-detalis-page  pt-50 ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-11 col offset-xl-1 offset-lg-1">
+                <div class=" slider-nav-thumbnails product-list-active d-md-none">
+                    <a class="active"><img src="assets/img/product/product-62.png" alt=""></a>
+                    <a><img src="assets/img/product/product-63.png" alt=""></a>
+                    <a><img src="assets/img/product/product-64.png" alt=""></a>
+                    <a><img src="assets/img/product/product-65.png" alt=""></a>
+                    <a><img src="assets/img/product/product-63.png" alt=""></a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-7 col-md-6 col-sm-12">
+                <div class="product-list-slider">
+                    <div class="product-img">
+                        <img src="{{productData.image}}" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                <div class="product-wrapper product-wrapper-2 pt-60">
+                    <div class="product-detalis">
+                        <h6><a>{{productData.name}}</a></h6>
+                        <ul class="rating d-flex pl-0 pt-10 pb-10">
+                            <li><i class="far fa-star" aria-hidden="true"></i></li>
+                            <li><i class="far fa-star" aria-hidden="true"></i></li>
+                            <li><i class="far fa-star" aria-hidden="true"></i></li>
+                            <li><i class="far fa-star" aria-hidden="true"></i></li>
+                            <li><i class="far fa-star" aria-hidden="true"></i></li>
+                        </ul>
+                        <div class="product-interested pb-20">
+                            <span class="pr-10">Category:</span>
+                            <span>{{productData.category.name}}</span>
+                        </div>
+                        <div class="price d-inline-block pb-25">
+                            <span>${{productData.price}}</span>
+                            <del>$999</del>
+                        </div>
+                        <div class="product-number d-flex pb-30">
+                            <div class="quty">
+                                <span class="pr-10">QTY:</span>
+                                <input class="qty" type="number" value="1" >                                       
+                            </div>
+                            <div class="availabillity pl-20">
+                                <span>Availability : <span class="pl-5">IN STOCK</span> </span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="page-share-icon  d-flex pt-25 pb-20">
+                            <span>Share:</span>
+                            <ul class="icon pl-15  d-flex" >
+                              <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                              <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                              <li><a href="#"><i class="fas fa-rss"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="cart-view d-flex">
+                            <div class="cart ">
+                                <a href="#" tabindex="0"><img src="assets/img/icon/cart-red.png" alt=""> Add To Cart</a>
+                           </div>
+                           <ul class="social-icon d-flex align-items-center pl-20">
+                            <li><a tabindex="0"><i class="fa fa-retweet" aria-hidden="true"></i></a></li>
+                            <li><a tabindex="0"><i class="far fa-heart" aria-hidden="true"></i></a></li>
+                            <li><a class="popup-img" ><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                            
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="description-area pt-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="description-tab pt-50 pl-50 pr-50 pb-40">
+                    <nav>
+                      <div class="nav nav-tabs " id="approach-tabs" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-description-tab" data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true">description</a>
+                        <a class="nav-item nav-link" id="nav-comment-tab" data-toggle="tab" href="#nav-comment" role="tab" aria-controls="nav-comment" aria-selected="false">COMMENTS</a>
+                        <a class="nav-item nav-link" id="nav-review-tab" data-toggle="tab" href="#nav-review" role="tab" aria-controls="nav-review" aria-selected="false">review</a>
+                      </div>
+                    </nav>
+                    <div class="tab-content mt-25 " id="nav-tabContents">
+                      <div class="tab-pane  active " id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
+                        <p>{{productData.description}}</p>
+                        
+                      </div>
+                      <div class="tab-pane " id="nav-comment" role="tabpanel" aria-labelledby="nav-comment-tab">
+                        <p>MOVIE STAR – Online Movie,Video & TV Show PSD Template is a the best design for 2017. any kinds of online video Template Based on Bootstrap, <br>
+                            MOVIE STAR – Online Movie,Video & TV Show PSD Template is a the best design for 2017. any kinds of online video Template Based on Bootstrap,e.</p>
+                        
+                      </div>
+                      <div class="tab-pane fade" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab">
+                        <p>MOVIE STAR – Online Movie,Video & TV Show PSD Template is a the best design for 2017. any kinds of online video Template Based on Bootstrap, <br>
+                            MOVIE STAR – Online Movie,Video & TV Show PSD Template is a the best design for 2017. any kinds of online video Template Based on Bootstrap, </p>
+                        
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- =================Product Area Ends================= -->
+<!-- =================Product Area Starts================= -->
+
+<div class="product-area pt-50 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section-title">
+                    <h3>
+                        Our Products
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+    </div>
+    <div class="container">
+        <div class="row custompar" *ngIf="allProductData.length">
+            
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 customchild" *ngFor="let post of allProductData" style="margin-top: 35px;">
+                    <div class="product-wrapper" *ngIf="post._id != productData._id">
+                        <div class="product-img ">
+                            <img src="{{post.image}}" alt="product" height="150px">
+                            <ul class="social-icon">
+                                
+                            </ul>
+                        </div>
+                        <div class="flip-box">
+                            <div class="product-detalis pt-15 pl-20 pr-20 pb-25">
+                                <span>{{post.category.name}}</span>
+                                <h6><a [routerLink]="['/singleproduct',post._id]">{{post.name}}</a></h6>
+                                <div class="price-color ">
+                                    <div class="price d-inline-block">
+                                        <span>${{post.price}}</span>
+                                        <del>$999</del>
+                                    </div>
+                                    <div class="color float-right d-flex">
+                                        <span>Color:</span>
+                                        <div class="color-set">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-detalis product-detalis-2 pt-15 pl-20 pr-20 pb-25">
+                                <div class="product-info">
+                                 <span>{{post.category.name}}</span>
+                                <h6><a [routerLink]="['/singleproduct',post._id]">{{post.name}}</a></h6>
+                                <div class="buy-info ">
+                                    <div class="cart float-left">
+                                        <form method="post" #cartForm="ngForm" (ngSubmit)="addToCart(cartForm.value)">
+                                            <input type="hidden" [(ngModel)]="post._id" name="productId"/>
+                                            <input type="hidden" [(ngModel)]="post.name" name="name"/>
+                                            <input type="hidden" [(ngModel)]="post.price" name="price"/>                                            
+                                            <button type="submit" class="btn btn-success">Add To Cart</button> 
+                                        </form>                                            
+                                    </div>
+                                    <ul class="rating d-flex">
+                                        <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="far fa-star" aria-hidden="true"></i></li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                
+            
+        </div>
+    </div>
+</div>
+
+<!-- =================Product Area Ends================= -->
+
+<!-- =================Brand Area Starts================= -->
+
+<div class="brand-area pt-50 ">
+    <div class="container">
+        <div class="brand-active" style="display: flex; margin:90px 0px 30px 0px;">
+            
+            <div class="single-brand" style="margin-right: 30px;">
+                <div class="brand-img">
+                    <img src="assets/img/brand/brand1.png" alt="brand">
+                </div>
+            </div>
+            <div class="single-brand" style="margin-right: 30px;">
+                <div class="brand-img">
+                    <img src="assets/img/brand/brand2.png" alt="brand">
+                </div>
+            </div>
+            <div class="single-brand" style="margin-right: 30px;">
+                <div class="brand-img">
+                    <img src="assets/img/brand/brand4.png" alt="brand">
+                </div>
+            </div>
+            <div class="single-brand" style="margin-right: 30px;">
+                <div class="brand-img">
+                    <img src="assets/img/brand/brand3.png" alt="brand">
+                </div>
+            </div>
+            <div class="single-brand" style="margin-right: 30px;">
+                <div class="brand-img">
+                    <img src="assets/img/brand/brand1.png" alt="brand">
+                </div>
+            </div>
+            <div class="single-brand" style="margin-right: 30px;">
+                <div class="brand-img">
+                    <img src="assets/img/brand/brand4.png" alt="brand">
+                </div>
+            </div>
+            <div class="single-brand" style="margin-right: 30px;">
+                <div class="brand-img">
+                    <img src="assets/img/brand/brand2.png" alt="brand">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

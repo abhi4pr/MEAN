@@ -1,0 +1,111 @@
+<app-aheader></app-aheader>
+
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+              <div class="nav">
+                  <div class="sb-sidenav-menu-heading">Core</div>
+                  <a class="nav-link" [routerLink]="['/admin/dashboard']">
+                      <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                      Dashboard
+                  </a>
+                  <a class="nav-link" [routerLink]="['/admin/aorders']">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Orders
+                  </a>
+                  <a class="nav-link" [routerLink]="['/admin/ausers']">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Users
+                  </a>
+                  <div class="sb-sidenav-menu-heading">Interface</div>
+                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsecategory" aria-expanded="false" aria-controls="collapsecategory">
+                      <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                      Categories
+                      <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                  </a>
+                  <div class="collapse" id="collapsecategory" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                      <nav class="sb-sidenav-menu-nested nav">
+                          <a class="nav-link" [routerLink]="['/admin/addcategory']">Add New</a>
+                          <a class="nav-link" [routerLink]="['/admin/categories']">List</a>
+                      </nav>
+                  </div>
+                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseproducts" aria-expanded="false" aria-controls="collapseproducts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Products
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                  </a>
+                  <div class="collapse" id="collapseproducts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" [routerLink]="['/admin/addproduct']">Add New</a>
+                        <a class="nav-link" [routerLink]="['/admin/aproducts']">List</a>
+                    </nav>
+                  </div>
+                                                      
+              </div>
+          </div>
+          <div class="sb-sidenav-footer">
+              <div class="small">Logged in as:</div>
+              Start Bootstrap
+          </div>
+      </nav>
+  </div>
+  
+  <div id="layoutSidenav_content">
+      <main>
+          <div class="container-fluid px-4">
+              <h1 class="mt-4">Edit Category</h1>
+              <ol class="breadcrumb mb-4">
+                  <li class="breadcrumb-item active">Edit Category</li>
+              </ol>
+              <div class="row">
+                  
+              </div>
+              
+              <div class="card mb-4">
+                  <div class="card-header">
+                      <i class="fas fa-table me-1"></i>
+                      Edit Single Category
+                  </div>
+                  <div class="card-body">
+                    <form class="form-horizontal" method="post" #catForm="ngForm" (ngSubmit)="onSubmit(catForm.value)">
+                        <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" [(ngModel)]="name" value={{categoryData.name}} class="form-control" id="email" placeholder="Enter name" name="name" required>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Icon:</label>
+                        <div class="col-sm-10">          
+                            <input type="text" ngModel value={{categoryData.icon}} class="form-control" id="pwd" placeholder="Enter icon code" name="icon" required>
+                        </div>
+                        </div>
+                        <div class="form-group">        
+                        
+                        </div>
+                        <div class="form-group">        
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button [disabled]="!name" type="submit" class="btn btn-success">Submit</button>
+                            <button type="button" class="btn btn-warning" style="margin:0 0 0 30px;"><a [routerLink]="['/admin/categories']">Cancel</a></button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    &middot;
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
